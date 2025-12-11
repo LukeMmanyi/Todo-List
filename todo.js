@@ -1,16 +1,32 @@
-let todoList = [];
+
+let todoList;
+
+if (!localStorage.getItem("todoList")) {
+  todoList = [];
+
+
+} else {
+ todoList = JSON.parse(localStorage.getItem("todoList"));
+
+
+}
+
+
+renderlist()
+
+
 
 const button = document.querySelector('.js-button');
   const input = document.querySelector('.js-input');
 
-  document.querySelector('.task-list').style.display = "none";
-
+  
 
 button.addEventListener('click', () => {
   const task = input.value
   todoList.push(task);
   input.value = '';
    renderlist();
+    saveToStorage()
 })
 
 function renderlist() {
@@ -46,6 +62,7 @@ removeButtons.forEach((button, index) => {
 button.addEventListener('click', () => {
 todoList.splice(index, 1 );
 renderlist();
+ saveToStorage()
 })
 
 
@@ -58,7 +75,9 @@ renderlist();
 
 
 
-
+function saveToStorage() {
+  localStorage.setItem("todoList", JSON.stringify(todoList));
+}
 
 
 
