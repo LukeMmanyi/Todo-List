@@ -1,0 +1,118 @@
+body {
+  background-color: white;
+}
+
+h1 {
+  font-family: roboto;
+  font-weight: 400;
+  color: red;
+  font-size: 50px;
+}
+
+h2 {
+  font-family: roboto;
+  font-weight: 400;
+  color: red;
+    margin-top: -5px;
+}
+
+.title , .message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-creation {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+
+}
+
+.task-placeholder {
+  font-family: roboto;
+  color: gray;
+}
+
+.input {
+width: 200px;
+  height: 40px;              
+  line-height: 40px;         
+  font-size: 15px;
+  border-radius: 20px;
+  border-style: none;
+  box-shadow: 0 0 30px 5px rgba(255, 0, 0, 0.8);
+  text-align: center;        
+  outline: none;        
+
+
+}
+
+.js-button {
+  border-radius: 20px;
+  margin-left: 15px;
+  border-style:solid;
+  color: red;
+  background-color: white;
+  font-family: roboto;
+   box-shadow: 0 0 30px 5px rgba(255, 0, 0, 0.8);
+  cursor: pointer;
+  border: none;
+  
+}
+
+.js-button:hover:hover {
+  background-color: red;
+  color: white;
+  transition: 0.3s;
+}
+
+* {
+  transition: all 0.7s ease;
+}
+
+.task-list {
+  text-align: center;
+  margin-top: 100px;
+  box-shadow: 0 0 30px 5px rgba(255, 0, 0, 0.8);
+  width: 400px;
+  border-radius: 50px;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.list {
+  font-family: roboto;
+  box-shadow: 0 0 30px 5px rgba(255, 0, 0, 0.8);
+  border-radius: 15px;
+  padding: 10px;
+
+}
+
+.list-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.js-remove {
+  border-radius: 20px;
+  margin-left: 15px;
+  border-style:solid;
+  color: red;
+  background-color: white;
+  font-family: roboto;
+   box-shadow: 0 0 30px 5px rgba(255, 0, 0, 0.8);
+  cursor: pointer;
+  border: none;
+}
+
+.js-remove:hover:hover {
+  background-color: red;
+  color: white;
+  transition: 0.3s;
+}
+
