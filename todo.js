@@ -12,6 +12,7 @@ if (!localStorage.getItem("todoList")) {
 }
 
 
+
 renderlist()
 
 
@@ -19,11 +20,27 @@ renderlist()
 const button = document.querySelector('.js-button');
   const input = document.querySelector('.js-input');
 
+  input.addEventListener('keydown', (event) => {
+    if (event.key == 'Enter') {
+      const task = input.value
+  todoList.push({
+    task: task,
+    date: ""
+  });
+  input.value = '';
+   renderlist();
+    saveToStorage()
+    }
+  })
   
 
 button.addEventListener('click', () => {
+  
   const task = input.value
-  todoList.push(task);
+  todoList.push({
+    task: task,
+    date: ""
+  });
   input.value = '';
    renderlist();
     saveToStorage()
@@ -42,7 +59,8 @@ todoList.forEach((task, index) => {
   }
 taskHtml += `
 <div class="list-row">
-<p class="list">${task}</p> 
+<p class="list">${task.task}</p> 
+<input class="date js-date" type="date" value="${todoList[index].date}"></input>
 <button class="js-remove" data-index="${index}">Remove</button>
 </div>
 `;
@@ -66,7 +84,17 @@ renderlist();
 })
 
 
+
+
 });
+
+const dateInput = document.querySelectorAll('.js-date');
+dateInput.forEach((date, index) => {
+date.addEventListener('change', () => {
+todoList[index].date = date.value;
+ saveToStorage()
+})
+})
 
 
 
@@ -78,7 +106,6 @@ renderlist();
 function saveToStorage() {
   localStorage.setItem("todoList", JSON.stringify(todoList));
 }
-
 
 
 
